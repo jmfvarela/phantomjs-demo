@@ -22,6 +22,9 @@ phantom.create()
     })
     .then(content => {
         console.log("Content length: " + content.length);
+        
+        process(sitepage);
+        
         console.log("Closing page and exit phantom");
         sitepage.close();
         phInstance.exit();
@@ -30,3 +33,25 @@ phantom.create()
         console.log("Error: " + error);
         phInstance.exit();
     });
+    
+    
+function process(page) {
+    page.setting('javascriptEnabled').then(function(value){
+        console.log("javascriptEnabled: " + value);
+    });
+    
+    page.property('plainText').then(function(value) {
+        console.log("plainText: (" + value.length + " length)");
+    });
+      
+    page.property('viewportSize').then(function(value) {
+        console.log("viewportSize: (" + value.width + ", " + value.height + ")");
+    });
+    
+    page.evaluate(function() {
+        return document.getElementById('svnrev').innerText;
+    }).then(function(value){
+        console.log("svnrev: " + value);
+    });
+}     
+    

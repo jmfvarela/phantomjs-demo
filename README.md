@@ -14,7 +14,7 @@ npm install phantom --save
 
 # Executing demo scripts
 ## Demo 1: accesing page stackoverflow
-Calculating content length
+Getting some parameters from page
 ```
 node demo.js
 ```
