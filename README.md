@@ -10,12 +10,39 @@ To create `package.json`:
 npm init
 
 npm install phantom --save
+
+npm install node-horseman --save
 ```
 
 # Executing demo scripts
-## Demo 1: accesing page stackoverflow
-Getting some parameters from page
+## Demo 1: using phantomjs-node
+Getting some parameters from stackoverflow
 ```
-node demo.js
+node phantomjs-node.js
 ```
 
+## Demo 2: using horseman
+Searching in Google and counting results
+```
+node horseman-google.js
+```
+
+Getting twitter followers for several users
+```
+node horseman-twitter.js
+```
+
+Evaluating function for getting dimensions of thumbimage in wikipedia
+```
+node horseman-wikipedia.js
+```
+
+Printing amazon to pdf and taking screenshot in jpg
+```
+node horseman-amazon.js
+```
+
+Working with cookies with httpbin
+```
+node horseman-httpbin.js
+```

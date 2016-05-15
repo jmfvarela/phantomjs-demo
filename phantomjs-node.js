@@ -39,7 +39,7 @@ function process(page) {
     page.setting('javascriptEnabled').then(function(value){
         console.log("javascriptEnabled: " + value);
     });
-    
+       
     page.property('plainText').then(function(value) {
         console.log("plainText: (" + value.length + " length)");
     });
@@ -47,11 +47,15 @@ function process(page) {
     page.property('viewportSize').then(function(value) {
         console.log("viewportSize: (" + value.width + ", " + value.height + ")");
     });
-    
+        
     page.evaluate(function() {
         return document.getElementById('svnrev').innerText;
     }).then(function(value){
         console.log("svnrev: " + value);
+    });
+    
+    page.evaluateJavaScript('function() { return document.getElementById(\'svnrev\').innerHTML; }').then(function(value){
+        console.log("svnrev (2): " + value);
     });
 }     
     
