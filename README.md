@@ -10,7 +10,11 @@ To create `package.json`:
 npm init
 
 npm install phantom --save
+```
 
+For using horseman:
+
+```
 npm install node-horseman --save
 ```
 
